@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="primary" type="color">#3c3c3c</item>
+    <item name="primaryDark" type="color">#0c0c0c</item>
+    <item name="accent" type="color">#c3c3c3</item>
+
+    <item name="ripple" type="color">#50BE5A</item>
+    <item name="accent_pressed" type="color">#669966</item>
+
+    <item name="red" type="color">#F0280A</item>
+    <item name="lightRed" type="color">#DC6450</item>
+    <item name="silver" type="color">#DC785A</item>
+    <item name="pink" type="color">#E6788C</item>
+    <item name="orange" type="color">#FAAA28</item>
+    <item name="brown" type="color">#C89632</item>
+    <item name="goldYellow" type="color">#D2B414</item>
+    <item name="yellow" type="color">#E1E14B</item>
+    <item name="green" type="color">#50BE5A</item>
+    <item name="lightGreen" type="color">#469632</item>
+    <item name="blueGreen" type="color">#32C8C8</item>
+    <item name="lightBlue" type="color">#A6D8FF</item>
+    <item name="blue" type="color">#1E64A0</item>
+    <item name="darkBlue" type="color">#3246C8</item>
+    <item name="purple" type="color">#C864DC</item>
+
+    <item name="pureWhite" type="color">#FFFFFF</item>
+    <item name="lightGray" type="color">#F0F0F0</item>
+    <item name="gray" type="color">#DCDCDC</item>
+    <item name="darkGray" type="color">#828282</item>
+</resources>
