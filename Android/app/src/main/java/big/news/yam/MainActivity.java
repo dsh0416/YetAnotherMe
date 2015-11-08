@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -19,17 +20,24 @@ public class MainActivity extends ActionBarActivity {
 
     public Toolbar toolbar;
     public DrawerLayout drawerLayout;
-    public LinearLayout drawerRootLayout;
+    public LinearLayout drawerRootLayout, drawer_notification, drawer_history, drawer_blacklist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (android.os.Build.VERSION.SDK_INT>=23) {
+            requestPermissions(new String[]{"android.permission.READ_SMS","android.permission.SEND_SMS","android.permission.READ_CALENDAR","android.permission.WRITE_CALENDAR"}, 10086);
+        }
+
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerRootLayout = (LinearLayout) findViewById(R.id.drawerRootLayout);
+        drawer_notification = (LinearLayout) findViewById(R.id.drawer_list_notification);
+        drawer_history = (LinearLayout) findViewById(R.id.drawer_list_history);
+        drawer_blacklist = (LinearLayout) findViewById(R.id.drawer_list_blacklist);
 
 
         // 设置 Toolbar 替代系统 ActionBar，并在 Android 5.0+ 赋予 elevation = 5 的参数以符合 Material Design
@@ -65,6 +73,27 @@ public class MainActivity extends ActionBarActivity {
             toolbar.setPadding(0, result, 0, 0);
             drawerRootLayout.setPadding(0,result,0,0);
         }
+
+        drawer_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeFragment(new NotificationCenterFragment());
+            }
+        });
+
+        drawer_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeFragment(new HistoryFragment());
+            }
+        });
+
+        drawer_blacklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeFragment(new BlackListFragment());
+            }
+        });
 
         changeFragment(new NotificationCenterFragment());
 

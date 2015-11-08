@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="300dp"
+    android:layout_width="250dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:id="@+id/drawerRootLayout"
     android:background="#ffffffff">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="top"
+            android:id="@+id/drawer_avatar"
+            android:src="@drawable/ic_background"
+            android:scaleType="fitXY"
+            android:clickable="true"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/drawerRelativeLayout"
+            android:paddingLeft="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/pureWhite"
+                android:shadowColor="@color/darkGray"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/drawer_nickname"
+                android:text="Delton Ding"
+                android:clickable="true"
+                android:layout_gravity="bottom"/>
+        </FrameLayout>
+    </FrameLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,16 +62,13 @@
                 android:paddingBottom="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:id="@+id/drawer_list_person"
+                android:id="@+id/drawer_list_notification"
                 android:clickable="true">
-                <!--
                 <ImageView
-                    android:src="@drawable/ic_person"
+                    android:src="@drawable/ic_cloud_grey600_24dp"
                     android:layout_height="24dp"
                     android:layout_width="24dp"
-                    android:layout_marginRight="25dp"
-                    android:contentDescription="@string/person"/>
-                    -->
+                    android:layout_marginRight="25dp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -44,7 +76,7 @@
                     android:gravity="start|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textStyle="bold"
-                    android:text="aaa" />
+                    android:text="通知" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,16 +88,13 @@
                 android:paddingBottom="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:id="@+id/drawer_list_friends"
+                android:id="@+id/drawer_list_history"
                 android:clickable="true">
-                <!--
                 <ImageView
-                    android:src="@drawable/ic_friends"
+                    android:src="@drawable/ic_cloud_check_grey600_24dp"
                     android:layout_height="24dp"
                     android:layout_width="24dp"
-                    android:layout_marginRight="25dp"
-                    android:contentDescription="@string/friends"/>
-                    -->
+                    android:layout_marginRight="25dp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -73,7 +102,7 @@
                     android:gravity="start|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textStyle="bold"
-                    android:text="bbb" />
+                    android:text="历史" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,16 +114,13 @@
                 android:paddingBottom="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:id="@+id/drawer_list_public"
+                android:id="@+id/drawer_list_blacklist"
                 android:clickable="true">
-                <!--
                 <ImageView
-                    android:src="@drawable/ic_public"
+                    android:src="@drawable/ic_account_remove_grey600_24dp"
                     android:layout_height="24dp"
                     android:layout_width="24dp"
-                    android:layout_marginRight="25dp"
-                    android:contentDescription="@string/square"/>
-                    -->
+                    android:layout_marginRight="25dp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -102,7 +128,7 @@
                     android:gravity="start|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textStyle="bold"
-                    android:text="ddd" />
+                    android:text="黑白名单" />
             </LinearLayout>
             <!-- 下面这个 Relative Layout 是一条分割线  -->
             <RelativeLayout
@@ -121,7 +147,6 @@
                 android:paddingBottom="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:id="@+id/drawer_list_profile"
                 android:clickable="true">
                 <TextView
                     android:layout_width="match_parent"
@@ -129,7 +154,7 @@
                     android:layout_gravity="start|center_vertical"
                     android:gravity="start|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="ccc" />
+                    android:text="设置" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,7 +166,6 @@
                 android:paddingBottom="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:id="@+id/drawer_list_suggest"
                 android:clickable="true">
                 <TextView
                     android:layout_width="match_parent"
@@ -149,7 +173,7 @@
                     android:layout_gravity="start|center_vertical"
                     android:gravity="start|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="ddd" />
+                    android:text="关于" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
